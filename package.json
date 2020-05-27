@@ -1,8 +1,8 @@
 {
-  "name": "repaso",
+  "name": "jg",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jgiron730.github.io/movies",
+  "homepage":"http://jgiron730.github.io/movies",
   "dependencies": {
     "axios": "^0.19.2",
     "framer-motion": "^1.10.3",

@@ -16,7 +16,7 @@ function Peli({ history }) {
     useEffect(() => {
 
         const misGeneros = (results, genres) => {
-            let gP = results[0].genre_ids.map((x, key) => {
+            let gP = results[0].genre_ids.map((x) => {
                 for (const gen of genres) {
                     if (x === gen.id) {
                         return gen.name
@@ -49,7 +49,7 @@ function Peli({ history }) {
         return () => {
 
         }
-    }, [setMiPeli, setGeneros])
+    }, [setMiPeli, setGeneros,idPeli])
 
     const mover: Varianst = {
         inicial: { opacity: 0, x: 0 },
@@ -102,7 +102,6 @@ function Peli({ history }) {
             </motion.div>
             <div className='review' >
                 <div>
-
                     <motion.span variants={aparecer} >
                         <FaLongArrowAltLeft onClick={() => history.goBack()} />
                     </motion.span>
@@ -116,10 +115,6 @@ function Peli({ history }) {
                     <motion.p variants={aparecer}>
                         {miPeli.overview}
                     </motion.p>
-
-
-
-
                 </div>
             </div>
         </Pelicula>
