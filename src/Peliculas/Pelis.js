@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { ThemeProvider } from 'styled-components'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link,HashRouter } from "react-router-dom";
 import { GlobalStyle, themeDark, Lista } from './CompStyle'
 import { AnimatePresence,motion } from "framer-motion"
 
@@ -55,7 +55,7 @@ function Pelis() {
         <ThemeProvider theme={themeDark}>
             <GlobalStyle />
 
-            <Router>
+            <HashRouter basename='/'>
                 <Route
                     render={({ location }) => (
                         <AnimatePresence exitBeforeEnter initial={false}>
@@ -93,7 +93,7 @@ function Pelis() {
                         </AnimatePresence>
                     )}
                 />
-            </Router>
+            </HashRouter>
 
         </ThemeProvider >
     )

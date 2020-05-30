@@ -23,7 +23,7 @@ function App() {
     <div className="App pad">
       <Pelis/>
       {/* <MiniSite/> */}
-     {/*  <Fmotion /> */}
+      {/* <Fmotion /> */}
       {/* <Simple/> */}
       {/* <Objeto/> */}
       {/* <ObjetoValorDinamico/> */}
