@@ -21,7 +21,7 @@ function Pelis() {
             try {
                 const r = await axios(`https://api.themoviedb.org/3/trending/all/day?api_key=dfec46579f0de27eddf537907d657311`);
 
-                //console.log(r.data.results[10])
+                console.log(r.data.results[18].original_title)
 
                 setPeli({ ultimas: r.data.results })
 
@@ -63,24 +63,27 @@ function Pelis() {
                                 <Route exact path="/">
                                     <Lista key="2" initial={'inicial'} animate={'animar'} exit={'exit'} variants={mover}>
                                         {
+                                            
                                             peli.ultimas.map((m, index) => {
+                                                let nombrePelicula = (m.original_title || m.original_name).replace(/%| /g, '-').toLowerCase();
                                                 if (index === 0) {
                                                     var imagen = <header>
                                                         <Menu/>
                                                         <div>
                                                             <h4> {m.name} {m.title}</h4>
-                                                        <Link to={`/results/${m.original_title || m.original_name}`}>
+                                                        <Link to={`/results/${nombrePelicula}`}>
                                                             <img alt={m.title} src={`https://image.tmdb.org/t/p/original/${m.backdrop_path}`} />
                                                         </Link>
                                                         </div>
                                                     </header>
                                                 } else {
-                                                    imagen = <Link to={`/results/${m.original_title || m.original_name}`}><img alt={m.title} src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`} /> </Link>
+                                                    imagen = <Link to={`/results/${nombrePelicula}`}><img alt={m.title} src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`} /> </Link>
                                                 }
                                                 return <motion.li key={index} > {imagen} </motion.li>
                                             }
 
-                                            )}
+                                            )
+                                        }
                                     </Lista>
                                 </Route>
                                 <Route path="/results/:idPeli">
