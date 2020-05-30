@@ -1,3 +1,11 @@
+# Movies Site
+
+This site is developed using React JS and The Movie Database API.
+Check it out the live demo: [https://jgiron730.github.io/react-movies/#/](https://jgiron730.github.io/react-movies/#/)
+
+## Available Scripts
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
